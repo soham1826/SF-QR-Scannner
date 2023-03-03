@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "qr_scanner",
+    "name": "SF QR-Scanner",
     "slug": "qr_scanner",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon1.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.soham18262.qr_scanner"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bb92bae6-2315-4a2c-be19-e2209e6f0876"
+      }
     }
   }
 }

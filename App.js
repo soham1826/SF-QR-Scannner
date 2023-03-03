@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, TouchableOpacity,Dimensions } from 'react-native';
 import { Linking } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
@@ -61,13 +61,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+
         <Text style = {{fontSize:20,color:'white'}}>{'SF QR-code scanner'}</Text>
       </View>
       <Text style = {{fontSize:25,textAlign:'center',margin:30}}>{"Scan and click on the link to get information about the plant"}</Text>
       <View style={styles.barcodebox}>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-          style={{ height: 400, width: 400 }} />
+          style={{height:300,width:300}} />
       </View>
       <TouchableOpacity onPress={openURI}>
       <Text style={styles.maintext} >{newtext}</Text>
@@ -81,10 +82,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+      // top: 0,
+      // left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0.2, 0.2, 0.2, 0.2)',
+      alignItems: 'center',
+      justifyContent: 'center',
   },
   maintext: {
     fontSize: 16,
@@ -95,19 +99,23 @@ const styles = StyleSheet.create({
 
   },
   barcodebox: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 300,
     width: 300,
-    overflow: 'hidden',
-    borderRadius: 30,
-    backgroundColor: 'tomato'
+    height: 300,
+    backgroundColor: 'transparent',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius:20,
+    alignItems:'center',
+    justifyContent:'center',
+     
+     
+    
   },
   header:{
     alignItems:'center',
     justifyContent:'center',
-    height:30,
-    width:1000,
+    height:40,
+    width:'100%',
     marginTop:0,
     backgroundColor:'tomato'
   },
@@ -115,5 +123,9 @@ const styles = StyleSheet.create({
     margin:5,
     padding:5,
   },
+  headericon:{
+    width:3,
+    height:3
+  }
   
 });
